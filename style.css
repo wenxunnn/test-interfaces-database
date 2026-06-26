@@ -105,22 +105,52 @@ nav {
 
 .periodic-table {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(18, minmax(34px, 1fr));
+  grid-template-rows: repeat(10, 46px);
+  gap: 5px;
   margin-top: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
 .element {
   border: 1px solid #cbd5e1;
   background: #f8fafc;
-  padding: 10px 6px;
-  border-radius: 8px;
-  text-align: center;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.15s;
+  position: relative;
+  padding: 4px;
+  min-width: 34px;
 }
 
+.element:hover {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+
+.element.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.atomic-number {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  font-size: 9px;
+  font-weight: normal;
+  opacity: 0.75;
+}
+
+.element-symbol {
+  display: block;
+  font-size: 16px;
+  margin-top: 12px;
+  text-align: center;
+}
 .element:hover {
   background: #dbeafe;
   border-color: #2563eb;
