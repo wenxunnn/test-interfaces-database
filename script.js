@@ -187,10 +187,16 @@ function buildPeriodicTable(containerId, type) {
   elements.forEach(element => {
     const button = document.createElement("button");
     button.className = "element";
-    button.textContent = element;
+    button.style.gridRow = element.row;
+    button.style.gridColumn = element.col;
+
+    button.innerHTML = `
+      <span class="atomic-number">${element.number}</span>
+      <span class="element-symbol">${element.symbol}</span>
+    `;
 
     button.addEventListener("click", () => {
-      toggleElement(element, type, button);
+      toggleElement(element.symbol, type, button);
     });
 
     container.appendChild(button);
