@@ -130,3 +130,12 @@ const PERIODIC_ELEMENTS = [
   { symbol: "No", name: "Nobelium", number: 102, mass: "[259]", row: 10, col: 16, category: "actinide" },
   { symbol: "Lr", name: "Lawrencium", number: 103, mass: "[266]", row: 10, col: 17, category: "actinide" }
 ];
+
+const HIDDEN_ELEMENTS = new Set([
+  "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu",
+  "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr"
+]);
+
+const VISIBLE_PERIODIC_ELEMENTS = PERIODIC_ELEMENTS.filter(
+  element => !HIDDEN_ELEMENTS.has(element.symbol)
+);
