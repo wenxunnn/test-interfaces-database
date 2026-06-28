@@ -49,7 +49,7 @@ function buildPeriodicTable(containerId, type) {
   if (!container) return;
   container.innerHTML = "";
 
-  PERIODIC_ELEMENTS.forEach(element => {
+  VISIBLE_PERIODIC_ELEMENTS.forEach(element => { {
     const button = document.createElement("button");
     button.className = `element cat-${element.category}`;
     button.style.gridRow = element.row;
